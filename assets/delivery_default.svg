@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300">
+  <!-- Background -->
+  <rect width="500" height="300" fill="#f5f5f5"/>
+  
+  <!-- Delivery Truck -->
+  <g transform="translate(50, 60)">
+    <!-- Truck Body -->
+    <rect x="20" y="40" width="150" height="60" fill="#d50000" stroke="#000" stroke-width="2"/>
+    <!-- Truck Cabin -->
+    <rect x="0" y="45" width="20" height="35" fill="#b71c1c" stroke="#000" stroke-width="2"/>
+    <!-- Windshield -->
+    <rect x="2" y="48" width="16" height="15" fill="#bbdefb" stroke="#000" stroke-width="1"/>
+    <!-- Wheels -->
+    <circle cx="40" cy="100" r="12" fill="#212121" stroke="#000" stroke-width="1"/>
+    <circle cx="140" cy="100" r="12" fill="#212121" stroke="#000" stroke-width="1"/>
+    <!-- Hubcaps -->
+    <circle cx="40" cy="100" r="4" fill="#9e9e9e" stroke="#000" stroke-width="1"/>
+    <circle cx="140" cy="100" r="4" fill="#9e9e9e" stroke="#000" stroke-width="1"/>
+    <!-- Delivery Sign -->
+    <rect x="70" y="50" width="60" height="20" fill="#ffeb3b" stroke="#000" stroke-width="1"/>
+    <text x="100" y="65" text-anchor="middle" fill="#000" font-family="Arial" font-size="10">ДОСТАВКА</text>
+  </g>
+  
+  <!-- Packages -->
+  <g transform="translate(250, 80)">
+    <!-- Large Package -->
+    <rect x="0" y="0" width="80" height="80" fill="#8d6e63" stroke="#5d4037" stroke-width="3"/>
+    <line x1="0" y1="0" x2="80" y2="80" stroke="#5d4037" stroke-width="1"/>
+    <line x1="80" y1="0" x2="0" y2="80" stroke="#5d4037" stroke-width="1"/>
+    <!-- Package Label -->
+    <rect x="25" y="30" width="30" height="20" fill="#fff" stroke="#000" stroke-width="1"/>
+    <text x="40" y="45" text-anchor="middle" fill="#000" font-family="Arial" font-size="16">?</text>
+  </g>
+  
+  <!-- Small Packages -->
+  <g transform="translate(370, 100)">
+    <!-- Small Package 1 -->
+    <rect x="0" y="0" width="40" height="40" fill="#a1887f" stroke="#5d4037" stroke-width="2"/>
+    <line x1="0" y1="0" x2="40" y2="40" stroke="#5d4037" stroke-width="1"/>
+    <line x1="40" y1="0" x2="0" y2="40" stroke="#5d4037" stroke-width="1"/>
+  </g>
+  
+  <g transform="translate(150, 150)">
+    <!-- Small Package 2 -->
+    <rect x="0" y="0" width="50" height="50" fill="#bcaaa4" stroke="#5d4037" stroke-width="2"/>
+    <line x1="0" y1="0" x2="50" y2="50" stroke="#5d4037" stroke-width="1"/>
+    <line x1="50" y1="0" x2="0" y2="50" stroke="#5d4037" stroke-width="1"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="250" y="250" text-anchor="middle" fill="#000" font-family="Arial" font-size="20" font-weight="bold">Доставка посылок</text>
+</svg>

@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+
+{% block title %}Телеграм Бот - Доставка | Пользователи{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">👥 Пользователи бота</h1>
+
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h3>Список пользователей</h3>
+        <button class="btn btn-primary btn-sm" id="refresh-users">
+            <i class="fas fa-sync-alt me-1"></i> Обновить
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Имя</th>
+                        <th scope="col">Доставок</th>
+                        <th scope="col">Рублей</th>
+                        <th scope="col">Опыта</th>
+                        <th scope="col">Активные баффы</th>
+                        <th scope="col">Последняя доставка</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table">
+                    <tr>
+                        <td colspan="7" class="text-center">Загрузка данных...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to fetch and display users
+    function fetchUsers() {
+        fetch('/dashboard/api/users')
+            .then(response => response.json())
+            .then(data => {
+                const usersTable = document.getElementById('users-table');
+                
+                if (data.error) {
+                    usersTable.innerHTML = `<tr><td colspan="7" class="text-center text-danger">Ошибка: ${data.error}</td></tr>`;
+                    return;
+                }
+                
+                if (!data.users || data.users.length === 0) {
+                    usersTable.innerHTML = '<tr><td colspan="7" class="text-center">Нет данных о пользователях</td></tr>';
+                    return;
+                }
+                
+                let tableContent = '';
+                
+                data.users.forEach(user => {
+                    tableContent += `
+                        <tr>
+                            <td>${user.telegram_id}</td>
+                            <td>${user.username}</td>
+                            <td>${user.deliveries}</td>
+                            <td>${user.money}</td>
+                            <td>${user.experience}</td>
+                            <td>${user.active_buffs_count}</td>
+                            <td>${user.last_delivery_time}</td>
+                        </tr>
+                    `;
+                });
+                
+                usersTable.innerHTML = tableContent;
+            })
+            .catch(error => {
+                console.error('Error fetching users:', error);
+                document.getElementById('users-table').innerHTML = 
+                    '<tr><td colspan="7" class="text-center text-danger">Ошибка загрузки данных</td></tr>';
+            });
+    }
+    
+    // Initial fetch
+    fetchUsers();
+    
+    // Set up refresh button
+    document.getElementById('refresh-users').addEventListener('click', fetchUsers);
+    
+    // Auto-refresh every 30 seconds
+    setInterval(fetchUsers, 30000);
+});
+</script>
+{% endblock %}

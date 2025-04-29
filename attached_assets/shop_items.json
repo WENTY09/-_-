@@ -1,0 +1,29 @@
+[
+  {
+    "id": "hyper_buff",
+    "name": "Гипер Бафф",
+    "description": "Повышает доход на 50%",
+    "price": 2750,
+    "duration_minutes": 40,
+    "earning_multiplier": 0.5,
+    "image_path": "assets/hyper_buff.jpg"
+  },
+  {
+    "id": "super_buff",
+    "name": "Супер Бафф",
+    "description": "Повышает доход на 15%",
+    "price": 850,
+    "duration_minutes": 30,
+    "earning_multiplier": 0.15,
+    "image_path": "assets/super_buff.jpg"
+  },
+  {
+    "id": "mega_buff",
+    "name": "Мега Бафф",
+    "description": "Повышает доход на 25%",
+    "price": 1800,
+    "duration_minutes": 30,
+    "earning_multiplier": 0.25,
+    "image_path": "assets/mega_buff.jpg"
+  }
+]

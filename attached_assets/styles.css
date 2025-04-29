@@ -1,0 +1,72 @@
+/* Additional styles for dashboard */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-radius: 10px 10px 0 0 !important;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.bg-gradient-primary {
+    background: linear-gradient(45deg, #4e73df 0%, #224abe 100%);
+}
+
+.bg-gradient-success {
+    background: linear-gradient(45deg, #1cc88a 0%, #13855c 100%);
+}
+
+.bg-gradient-warning {
+    background: linear-gradient(45deg, #f6c23e 0%, #dda20a 100%);
+}
+
+.bg-gradient-danger {
+    background: linear-gradient(45deg, #e74a3b 0%, #c72a1c 100%);
+}
+
+/* Icons for features */
+.feature-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Footer styling */
+.footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Buff card styling */
+.buff-card {
+    transition: all 0.3s;
+}
+
+.buff-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Table styling */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Stats cards */
+.stats-icon {
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}

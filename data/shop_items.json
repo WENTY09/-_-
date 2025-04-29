@@ -1,0 +1,38 @@
+[
+  {
+    "item_id": "hyper_buff",
+    "name": "Гипер Бафф",
+    "description": "Повышает доход на 50%",
+    "price": 2750,
+    "bonus": 0.5,
+    "duration": 40,
+    "image": "assets/shop/IMG_1914.jpeg"
+  },
+  {
+    "item_id": "super_buff",
+    "name": "Супер Бафф",
+    "description": "Повышает доход на 15%",
+    "price": 850,
+    "bonus": 0.15,
+    "duration": 30,
+    "image": "assets/shop/IMG_2282.jpeg"
+  },
+  {
+    "item_id": "mega_buff",
+    "name": "Мега Бафф",
+    "description": "Повышает доход на 25%",
+    "price": 1800,
+    "bonus": 0.25,
+    "duration": 30,
+    "image": "assets/shop/IMG_2283.jpeg"
+  },
+  {
+    "item_id": "ultra_buff",
+    "name": "Ультра Бафф",
+    "description": "Повышает доход на 35%",
+    "price": 2200,
+    "bonus": 0.35,
+    "duration": 35,
+    "image": "assets/shop/IMG_2284.jpeg"
+  }
+]

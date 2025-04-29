@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% block title %}Телеграм Бот - Доставка | Статистика{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">📊 Подробная статистика</h1>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3>Системная информация</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">Использование CPU</label>
+                    <div class="progress" style="height: 25px;">
+                        <div id="cpu-usage" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Использование памяти</label>
+                    <div class="progress" style="height: 25px;">
+                        <div id="memory-usage" class="progress-bar bg-success" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Использование диска</label>
+                    <div class="progress" style="height: 25px;">
+                        <div id="disk-usage" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                </div>
+                <div>
+                    <strong>Время работы системы:</strong> <span id="system-uptime">...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3>Статистика бота</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><i class="fas fa-users"></i> Пользователи</h5>
+                                <h2 id="stats-users-count">...</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><i class="fas fa-box"></i> Доставки</h5>
+                                <h2 id="stats-deliveries-count">...</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><i class="fas fa-money-bill"></i> Рубли</h5>
+                                <h2 id="stats-earnings-count">...</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card bg-warning text-dark">
+                            <div class="card-body text-center">
+                                <h5 class="card-title"><i class="fas fa-star"></i> Активные баффы</h5>
+                                <h2 id="stats-buffs-count">...</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3>История активности</h3>
+    </div>
+    <div class="card-body">
+        <canvas id="activity-chart" width="400" height="200"></canvas>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/stats.js') }}"></script>
+{% endblock %}
